@@ -1,4 +1,3 @@
-<section>
         <table>
             <thead>
                 <tr>
@@ -26,6 +25,6 @@
 			?>
 		</table>
 		<script>
-			var ultimo_registro = <?php echo $ultimo_registro;?>
+			ultimo_registro = <?php echo $ultimo_registro;?>
 		</script>
-</section>
+

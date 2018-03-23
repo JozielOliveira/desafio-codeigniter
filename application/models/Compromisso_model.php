@@ -27,15 +27,14 @@ class Compromisso_model extends CI_Model {
 	}
 // Metodo que deleta um Compromisso na tabela 
 		public function delete_compromisso($id=NULL){
-			//Verificacao no banco de quantos compromissos existem
-			$num  = $this->db->count_all('compromisso');
-			//Validacao para verificar se nao foi passado um $id NULL, e se existe pelo menos 1, se existir so um, nao e deletado nenhum compromissoo
-			if (($id != NULL) && ($num > 1)):
+			//Validacao
+			if ($id != NULL):
 				$this->db->delete('compromisso', array('id'=>$id));            
 			endif;
 		} 
 // Metodo que verifica a exixstencia do ID
 		public function search_id($id=NULL){
+			//Validacao
 			if ($id != NULL){    
 				$query = $this->db->get_where('compromisso',array('Id'=>$id));
 				$result = $query->result_array();                 
@@ -53,5 +52,15 @@ class Compromisso_model extends CI_Model {
 				$query = $this->db->get();
 				return $query->result();
 			}
+		}
+
+		public function exist_compromisso(){
+			$num  = $this->db->count_all('compromisso');
+			//Validacao
+			if ($num >= 1):
+				return 1;
+			else:
+				return 0;
+			endif;
 		}
 }

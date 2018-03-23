@@ -1,5 +1,7 @@
 // Quando o usuario clicar em Novo compromisso, abre o modal 
 function activeModal(titulo_modal, id, data) {
+
+	
 	
 	if(titulo_modal != "Editar Compromisso"){
 		document.getElementById('id_compromisso').value = ultimo_registro + 1
@@ -33,7 +35,7 @@ function result_del(res){
 	if(res)
 		location.href = '/desafio-codeigniter/index.php/compromisso/delete_compromisso/'+id
 	else
-		modal_delete.style.display = "none"
+		document.getElementById('Modal_delete').style.display = "none"
 }
 
 

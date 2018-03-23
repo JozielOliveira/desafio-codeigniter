@@ -12,6 +12,7 @@ class Compromisso extends CI_Controller {
 	public function index(){
 
 		$data['compromissos'] = $this->compromisso_model->get_compromisso();
+		$data['exist_compromisso'] = $this->compromisso_model->exist_compromisso();
 		$this->load->view('index', $data);
 		
 	}

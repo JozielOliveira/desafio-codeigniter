@@ -23,7 +23,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <button class="novoCompromisso"  id="activeModal" onClick="activeModal('Novo Compromisso')">Novo Compromisso</button>
 	</header>
 	<!-- Tabela -->	
-	<?php require_once('Lista.php'); ?>
+	<section>
+	<?php 
+		$ultimo_registro = 0;
+	?>
+	<script>
+		var ultimo_registro = <?php echo $ultimo_registro;?>
+	</script>
+	<?php
+		if($exist_compromisso == 1):
+			require_once('Lista.php');
+		else:
+			echo "<h1>Adicione um compromisso</h1>";
+		endif; 
+		
+	?>
+	</section>
 
     <!-- Modal Novo Compromisso-->
 	<?php require_once('Modal_add.php'); ?>
