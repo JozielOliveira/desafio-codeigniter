@@ -27,6 +27,9 @@ section tr:nth-child(even) {
 .form{
 	display: initial;
 }
+body{
+	font-family: 'Roboto', sans-serif;
+}
 header{
     position: absolute;
     width: 96%;

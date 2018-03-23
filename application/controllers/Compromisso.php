@@ -22,18 +22,20 @@ class Compromisso extends CI_Controller {
 		$data['Data_Compromisso'] = $this->input->post('date');
 		$data['Hora_Compromisso'] = $this->input->post('time');
 		
-		$id = $this->input->post('id');
-		// Variavel que recebe o resulta sa existencia ou nao de um id no banco	
-		$result = $this->compromisso_model->search_id($id);
+		if($data['Titulo'] != NULL && $data['Data_Compromisso'] != NULL && $data['Hora_Compromisso'] != NULL){
+			$id = $this->input->post('id');
+			// Variavel que recebe o resulta sa existencia ou nao de um id no banco	
+			$result = $this->compromisso_model->search_id($id);
 
-		if(count($result) > 0):
-			//Se o id existir faz um update no compromisso
-			$this->compromisso_model->update_compromisso($id,$data);
-		else:
-			//Senao adiciona um compromisso
-			$data['Id'] = $this->input->post('id');
-			$this->compromisso_model->add_compromisso($data);
-		endif;
+			if(count($result) > 0 && $id != NULL):
+				//Se o id existir faz um update no compromisso
+				$this->compromisso_model->update_compromisso($id,$data);
+			else:
+				//Senao adiciona um compromisso
+				$data['Id'] = $this->input->post('id');
+				$this->compromisso_model->add_compromisso($data);
+			endif;
+		}
 		// Recarega a pagina index
 		$this->index();
 			
