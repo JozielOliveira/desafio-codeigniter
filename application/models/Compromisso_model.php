@@ -2,10 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Compromisso_model extends CI_Model {
-	public function _construct(Type $var = null)
-	{
-		$this->load->helper('database');
-	}
+
 // Metodo que pega o comprimosso que exixtem no Banco de Dados
 	public function get_compromisso(){
 		$query = $this->db->get('compromisso');
