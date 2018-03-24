@@ -57,7 +57,8 @@ class Compromisso extends CI_Controller {
 		$date = $this->input->post('date1');
 
 		if($date != NULL):
-			$data['compromissos'] = $this->compromisso_model->search_date_time($date);
+			$data['compromissos'] = $this->compromisso_model->search_date_time($date);		
+			$data['exist_compromisso'] = $this->compromisso_model->exist_compromisso();
 			$this->load->view('index', $data);
 		else:
 			$this->index();

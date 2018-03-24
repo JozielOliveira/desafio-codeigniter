@@ -1,24 +1,21 @@
 // Quando o usuario clicar em Novo compromisso, abre o modal 
 function activeModal(titulo_modal, id, data) {
 
-	
+	document.getElementById('titulo_modal').innerHTML = titulo_modal
 	
 	if(titulo_modal != "Editar Compromisso"){
 		document.getElementById('id_compromisso').value = ultimo_registro + 1
-		document.getElementById('Modal_add').style.display = "block"
+		document.getElementById('Modal_save').style.display = "block"
 		
 	}else{
-		document.getElementById('id_compromisso1').value = id
-		document.getElementById('Modal_update').style.display = "block"
+		document.getElementById('id_compromisso').value = id
+		document.getElementById('Modal_save').style.display = "block"
 	}
 }
 
 // Quando o usuario clicar "Voltar", fecha o modal
-function close_modal_add() {
-	document.getElementById('Modal_add').style.display = "none"
-}
-function close_modal_up() {
-	document.getElementById('Modal_update').style.display = "none"
+function close_modal_save() {
+	document.getElementById('Modal_save').style.display = "none"
 }
 
 // Funcao de confirmacao de deletar

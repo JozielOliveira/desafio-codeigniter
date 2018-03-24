@@ -40,10 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?>
 	</section>
 
-    <!-- Modal Novo Compromisso-->
-	<?php require_once('Modal_add.php'); ?>
-	<!-- Modal Edita Compromisso-->
-	<?php require_once('Modal_update.php'); ?>
+    <!-- Modal Novo Compromisso ou Atualizar-->
+	<?php require_once('Modal_save.php'); ?>
 	<!-- Modal Deletar Compromisso-->
 	<?php require_once('Modal_delete.php'); ?>
 
